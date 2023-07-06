@@ -1,7 +1,7 @@
-const container = document.getElementById('card')
-const loadFirst = document.getElementsByClassName('btn btn-primary my-2')[0]
+// const container = document.getElementById('card')
+// const loadFirst = document.getElementsByClassName('btn btn-primary my-2')[0]
 
-let data
+
 
 const library = function(){
     fetch('https://api.pexels.com/v1/search?query=dogs', {
@@ -18,8 +18,8 @@ const library = function(){
     }
 })
 
-.then((fetchData)=>{
-    data =fetchData
+.then((data)=>{
+    
     console.log(data)
 })
 .catch((err) =>{
@@ -29,7 +29,7 @@ const library = function(){
 loadFirst.addEventListener('click', function(){
     console.log('Bottone premuto')
 
-    data.photos.forEach((element) =>{
+    data.photos.forEach(card) => {
         const card = document.createElement('div')
         card.classList.add('col md-4')
 
@@ -56,8 +56,8 @@ Edit
 <small class="text-muted">9 mins</small> `
 
 container.appendChild(card)
-    })
-})
+   } })
+
 
 
 
